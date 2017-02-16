@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>SoftSelect for Twitter bootstrap</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- jQuery -->
+        
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <!--
+             <link rel="stylesheet" href="/softselect/js/libs/twitter-bootstrap/css/bootstrap.css">  
+        -->
+        <!-- jQuery -->
+        <script
+            src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+            crossorigin="anonymous">
+        </script>
+        
+         <!-- Bootstrap -->
+            <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" 
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" 
+            crossorigin="anonymous">
+        </script>
+        
+        <script src="js/softselect.js"> </script>
+        
+    </head>
+    <body>
+        <h1>SoftSelect demo page</h1>
+        <p>
+        This component add ability to standart select component to specify a range values.
+        It' meaningful and work only with select containing digital values.
+        The size of interval stored in form field named SELECTNAME_range.
+        Where SELECTNAME is a name of base select component.
+        </p>
+        <form method="get">
+            <div style="padding: 40px">
+                Default (simple)
+                <select id="default" name="default" class="form-control ">
+                    <option value="10">10мм</option>
+                    <option value="20">20мм</option>
+                    <option value="30">30мм.</option>
+                </select>
+                Only one fixed value.
+                Buttons
+                <select id="buttons" name="buttons" class="form-control ">
+                    <option value="10">10"</option>
+                    <option value="20">20"</option>
+                    <option value="30">30".</option>
+                </select>
+                User select value from list
+                
+                Buttons
+                <select id="dropdown" name="dropdown" class="form-control ">
+                    <option value="10">10%</option>
+                    <option value="20">20%</option>
+                    <option value="35">35%.</option>
+                </select>
+            </div>
+            <input type ='submit' value='Send'>
+        </form>
+        
+        <script language="JavaScript" >
+         $(function(){
+        // init pure jquery components
+          
+        // now DOM loaded but js script like bootstrap may be not  
+        $(window).on('load', function(){
+            
+            $('#default').softselect();
+            $('#buttons').softselect({style:'buttons',range:[5,10,15]});
+            $('#dropdown').softselect({style:'dropdown'});
+             });
+          
+      });    
+        
+    </script>
+    </body>
+</html>
